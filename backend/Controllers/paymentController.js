@@ -1,6 +1,6 @@
 const axios = require("axios");
 const UUID = require("uuid-int");
-const Participant = require("../models/user.model");
+const Participant = require("../models/UserModel");
 
 const id = {}; // To keep track of intervals for transaction checks
 
