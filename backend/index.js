@@ -14,6 +14,7 @@ const authRoute = require("./Routes/AuthRoute");
 const holdingsRoute = require("./Routes/HoldingsRoute");
 const ordersRoute = require("./Routes/OrdersRute");
 const positionsRoute = require("./Routes/PositionsRoute");
+const paymentRoute = require("./Routes/paymentRoute")
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 
 app.use("/auth", authRoute);
+app.use("/payment", paymentRoute);
 
 app.use("/", holdingsRoute);
 app.use("/", positionsRoute);
