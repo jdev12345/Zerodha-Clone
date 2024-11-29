@@ -13,8 +13,7 @@ Welcome to **Zerodha Clone**! This repository includes a clone of the popular st
 5. [Setup](#-setup)
 6. [Features](#-features)
 7. [Demo & Screenshots](#-demo--screenshots)
-8. [Acknowledgments](#-acknowledgments)
-9. [License](#-license)
+8. [License](#-license)
 
 ---
 
@@ -128,14 +127,6 @@ Explore the unique features available in this application:
 | Products Page                        | Pricing Page                         | Support Page                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | ![Mockup](./Screenshot/Product.jpeg) | ![Mockup](./Screenshot/Pricing.jpeg) | ![Mockup](./Screenshot/Support.jpeg) |
-
----
-
-## 🙏 Acknowledgments
-
-We’d like to thank the following contributors and resources:
-
-- **[Apna College's Delta 3.0 Course](https://www.apnacollege.in/)** - Course resource.
 
 ---
 
