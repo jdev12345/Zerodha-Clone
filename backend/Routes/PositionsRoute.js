@@ -1,10 +1,10 @@
-const { OrderstModel } = require('../Models/OrderstModel')
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
 
-router.get("/allOrders",async (req,res)=>{
-    let allOrders = await OrderstModel.find({})
-    res.json(allOrders)
-  })
-  
+const { verifyToken } = require("../middlewares/verifyToken");
+
+const { index } = require("../Controllers/positionsController");
+
+router.get("/index", verifyToken, index);
 
 module.exports = router;

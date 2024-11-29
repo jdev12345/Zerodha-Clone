@@ -1,35 +1,27 @@
-require('dotenv').config()
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const app = express()
-const cookieParser = require("cookie-parser");
+const port = process.env.PORT || 3002;
+const url = process.env.MONGO_URL;
 
-const PORT = process.env.PORT || 3002
-const url = process.env.MONGO_URL
+const holdingsRoute = require("./routes/holdingsRoute");
+const positionsRoute = require("./routes/positionsRoute");
+const userRoute = require("./routes/userRoute");
+const orderRoute = require("./routes/orderRoute");
 
-const authRoute = require("./Routes/AuthRoute");
-const holdingsRoute = require("./Routes/HoldingsRoute");
-const ordersRoute = require("./Routes/OrdersRute");
-const positionsRoute = require("./Routes/PositionsRoute");
-const paymentRoute = require("./Routes/paymentRoute")
+app.use(cors());
+app.use(bodyParser.json());
 
-app.use(cors())
-app.use(bodyParser.json())
-app.use(cookieParser());
+app.use("/holdings", holdingsRoute);
+app.use("/positions", positionsRoute);
+app.use("/user", userRoute);
+app.use("/orders", orderRoute);
 
-
-app.use("/auth", authRoute);
-app.use("/payment", paymentRoute);
-
-app.use("/", holdingsRoute);
-app.use("/", positionsRoute);
-app.use("/", ordersRoute);
-
-app.listen(PORT,()=>{
-    console.log(`Listening to port ${PORT}`)
-    mongoose.connect(url)
-    console.log(`Db Connected!`)
-})
+app.listen(port, async () => {
+  console.log(`App Is listening On ${port}`);
+  await mongoose.connect(url).then(() => console.log("Connected To DB"));
+});
