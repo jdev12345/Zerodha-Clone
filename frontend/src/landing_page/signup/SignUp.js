@@ -16,18 +16,15 @@ const SignUp = () => {
       return;
     }
 
-    // Handle account creation API call here
     console.log('Creating user with', { name, email, password });
     try {
       const response = await axios.post('http://localhost:3002/auth/signup', { email, password });
       console.log('SignUp successful:', response.data);
-      // The cookie is automatically saved in the browser
       window.location.href = 'http://localhost:5000/dashboard';
     } catch (err) {
       console.error('SignUp failed:', err.response.data);
       setError(err.response.data.message || 'Something went wrong');
     }
-    // Clear error after submit
     setError('');
   };
 

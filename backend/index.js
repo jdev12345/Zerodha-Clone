@@ -8,10 +8,11 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
-const holdingsRoute = require("./routes/holdingsRoute");
-const positionsRoute = require("./routes/positionsRoute");
-const userRoute = require("./routes/userRoute");
-const orderRoute = require("./routes/orderRoute");
+const holdingsRoute = require("./Routes/holdingsRoute");
+const positionsRoute = require("./Routes/positionsRoute");
+const userRoute = require("./Routes/userRoute");
+const orderRoute = require("./Routes/orderRoute");
+const paymentRoute = require("./Routes/paymentRoute");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,6 +21,7 @@ app.use("/holdings", holdingsRoute);
 app.use("/positions", positionsRoute);
 app.use("/user", userRoute);
 app.use("/orders", orderRoute);
+app.use("/payment", paymentRoute);
 
 app.listen(port, async () => {
   console.log(`App Is listening On ${port}`);

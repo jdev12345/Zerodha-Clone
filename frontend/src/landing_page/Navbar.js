@@ -32,9 +32,9 @@ function Navbar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-lg-0">
               <li class="nav-item">
-                <Link class={navActive==1?navActiveClass:navDisabledClass} onClick={()=>changeNavState(1)} aria-current="page" to='/signup'>
+                <a class={navActive==1?navActiveClass:navDisabledClass} onClick={()=>changeNavState(1)} aria-current="page" href='http://localhost:3000/'>
                 Signup
-                </Link>
+                </a>
               </li>
               <li class="nav-item">
                 <Link class={navActive==2?navActiveClass:navDisabledClass} onClick={()=>changeNavState(2)} to='/about'>
